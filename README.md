@@ -1,6 +1,6 @@
 # tf-infra-falco-eks-audit-bridge
 Terraform infrastructure for falco-eks-audit-bridge (as proposed in https://xebia.com/blog/monitoring-aws-eks-audit-logs-with-falco).
-This creates a Kinesis Firehose stream sending data to an s3 bucket coming from your EKS cluster control plane logs, loosely based on [this](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs//SubscriptionFilters.html#FirehoseExample) AWS example. You can then use the [falco-eks-audit-bridge](https://github.com/xebia/falco-eks-audit-bridge) deployment to process your cluster cohtrol plane logs with Falco.
+This creates a Kinesis Firehose stream sending data to an s3 bucket coming from your EKS cluster control plane logs, loosely based on [this](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs//SubscriptionFilters.html#FirehoseExample) AWS example. You can then use the [falco-eks-audit-bridge](https://github.com/xebia/falco-eks-audit-bridge) deployment to process your cluster control plane logs with Falco.
 
 
 ## Config
