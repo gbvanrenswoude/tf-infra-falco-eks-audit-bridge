@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "audit" {
-  bucket = "eks-auditlog-${var.account_id}${replace(local.branch_suffix,"_","-")}"
+  bucket = "eks-auditlog-${var.account_id}${replace(local.branch_suffix, "_", "-")}"
 
   server_side_encryption_configuration {
     rule {
@@ -13,15 +13,15 @@ resource "aws_s3_bucket" "audit" {
     enabled = true
   }
 
-  tags {
-    Name      = "eks-auditlog-${var.account_id}${replace(local.branch_suffix,"_","-")}"
-    env       = "${var.env}"
+  tags = {
+    Name      = "eks-auditlog-${var.account_id}${replace(local.branch_suffix, "_", "-")}"
+    env       = var.env
     terraform = "true"
   }
 }
 
 resource "aws_s3_bucket_policy" "policy" {
-  bucket = "${aws_s3_bucket.audit.bucket}"
+  bucket = aws_s3_bucket.audit.bucket
 
   policy = <<EOF
 {
@@ -47,4 +47,6 @@ resource "aws_s3_bucket_policy" "policy" {
     ]
 }
 EOF
+
 }
+

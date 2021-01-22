@@ -1,21 +1,21 @@
 ###### AWS variables
 
-variable region {
+variable "region" {
   default = "eu-west-1"
 }
 
 ####### Deployment variables
 
-variable account_id {
-  type    = "string"
-  default = "111111111111"
+variable "account_id" {
+  type    = string
+  default = "123"
 }
 
-variable deploy_role {
-  default = "somerole"
-}
+# variable deploy_role {
+#   default = "somerole"
+# }
 
-variable env {
+variable "env" {
   description = "Unique environment identifier"
   default     = "dev"
 }
