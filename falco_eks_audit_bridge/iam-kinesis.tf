@@ -2,7 +2,7 @@ data "template_file" "kinesis-trust" {
   template = file("${path.module}/policies/kinesis-trust.json.tmpl")
 
   vars = {
-    account_id = data.aws_caller_identity.current.account_id
+    account_id = var.account_id
   }
 }
 

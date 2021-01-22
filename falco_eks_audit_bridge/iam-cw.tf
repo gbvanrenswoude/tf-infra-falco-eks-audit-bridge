@@ -10,7 +10,7 @@ data "template_file" "cw" {
   template = file("${path.module}/policies/cw.json.tmpl")
 
   vars = {
-    account_id  = data.aws_caller_identity.current.account_id
+    account_id  = var.account_id
     region      = var.region
     cw_role_arn = aws_iam_role.cw.arn
   }
