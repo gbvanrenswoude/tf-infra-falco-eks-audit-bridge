@@ -19,3 +19,6 @@ variable "env" {
   description = "Unique environment identifier"
   default     = "dev"
 }
+variable "log_group_name" {
+  description = "EKS log group name"
+}
