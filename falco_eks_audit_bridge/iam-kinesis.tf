@@ -16,9 +16,9 @@ data "template_file" "kinesis" {
 
 #eks-cluster-role
 resource "aws_iam_role" "kinesis" {
-  name                 = "kinesis${local.branch_suffix}"
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:policy/awt-role-boundary"
-  assume_role_policy   = data.template_file.kinesis-trust.rendered
+  name = "kinesis${local.branch_suffix}"
+  #  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:policy/awt-role-boundary"
+  assume_role_policy = data.template_file.kinesis-trust.rendered
 }
 
 resource "aws_iam_policy" "kinesis" {

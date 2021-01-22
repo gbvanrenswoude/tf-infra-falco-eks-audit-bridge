@@ -18,9 +18,9 @@ data "template_file" "cw" {
 
 #eks-cluster-role
 resource "aws_iam_role" "cw" {
-  name                 = "cw${local.branch_suffix}"
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:policy/awt-role-boundary"
-  assume_role_policy   = data.template_file.cw-trust.rendered
+  name = "cw${local.branch_suffix}"
+  # permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:policy/awt-role-boundary"
+  assume_role_policy = data.template_file.cw-trust.rendered
 }
 
 resource "aws_iam_policy" "cw" {
